@@ -5,3 +5,8 @@ BUI=../build
 strlen_test:
 	$(CC) $(CFLAG) -D STRLEN s21_string.c s21_string_test.c -o $(BUI)/Quest_1
 
+strcmp_test:
+	$(CC) $(CFLAG) -D STRCMP s21_string.c s21_string_test.c -o $(BUI)/Quest_2
+
+strcpy_test: 
+	$(CC) $(CFLAG) -D STRCMP s21_string.c s21_string_test.c -o $(BUI)/Quest_3
