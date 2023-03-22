@@ -13,3 +13,6 @@ strcpy_tests:
 
 strcat_tests:
 	$(CC) $(CFLAG) -D STRCAT s21_string.c s21_string_test.c -o $(BUI)/Quest_4
+
+strchr_tests:
+	$(CC) $(CFLAG) -D STRCHR s21_string.c s21_string_test.c -o $(BUI)/Quest_5

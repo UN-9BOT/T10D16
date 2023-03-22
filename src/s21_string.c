@@ -32,3 +32,13 @@ void s21_strcat(char *s1, char *s2) {
         s1[i] = s2[j];
     }
 }
+
+char *s21_strchr(char *s1, char sym) {
+    char *res = NULL;
+    for (int i = 0; s1[i]; i++) {
+        if (s1[i] == sym) {
+            res = &s1[i];
+        }
+    }
+    return (res);
+}

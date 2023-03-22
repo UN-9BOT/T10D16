@@ -4,6 +4,7 @@ void s21_strlen_test();
 void s21_strcmp_test();
 void s21_strcpy_test();
 void s21_strcat_test();
+void s21_strchr_test();
 
 int main(void) {
 #ifdef STRLEN
@@ -18,7 +19,9 @@ int main(void) {
 #ifdef STRCAT
     s21_strcat_test();
 #endif
-
+#ifdef STRCHR
+    s21_strchr_test();
+#endif
     return (0);
 }
 
@@ -28,9 +31,9 @@ void s21_strlen_test() {
 
     for (int i = 0; i < NUM; i++) {
         if (s21_strlen(data[i]) == lenData[i]) {
-            printf("%s\n%i\nSUCCESS\n\n", data[i], lenData[i]);
+            printf("%s - %i - SUCCESS\n", data[i], lenData[i]);
         } else {
-            printf("%s\n%i\nFAIL\n\n", data[i], lenData[i]);
+            printf("%s - %i - FAIL\n", data[i], lenData[i]);
         }
     }
 }
@@ -42,9 +45,9 @@ void s21_strcmp_test() {
 
     for (int i = 0; i < NUM; i++) {
         if (s21_strcmp(d1[i], d2[i]) == res[i]) {
-            printf("%s\n%s\n%i\nSUCCESS\n\n", d1[i], d2[i], res[i]);
+            printf("%s - %s - %i - SUCCESS\n", d1[i], d2[i], res[i]);
         } else {
-            printf("%s\n%s\n%i\nFAIL\n\n", d1[i], d2[i], res[i]);
+            printf("%s - %s - %i - FAIL\n", d1[i], d2[i], res[i]);
         }
     }
 }
@@ -61,9 +64,9 @@ void s21_strcpy_test() {
             }
         }
         if (flag == 0) {
-            printf("%s\n%s\nSUCCESS\n\n", d1[i], d3);
+            printf("%s - %s -  SUCCESS\n", d1[i], d3);
         } else {
-            printf("%s\n%s\nFAIL\n\n", d1[i], d3);
+            printf("%s - %s -  FAIL\n", d1[i], d3);
         }
     }
 }
@@ -82,9 +85,23 @@ void s21_strcat_test() {
             }
         }
         if (flag == 0) {
-            printf("%s\n%s\nSUCCESS\n\n", d1[i], d3[i]);
+            printf("%s - %s -  SUCCESS\n", d1[i], d3[i]);
         } else {
-            printf("%s\n%s\nFAIL\n\n", d1[i], d3[i]);
+            printf("%s - %s -  FAIL\n", d1[i], d3[i]);
+        }
+    }
+}
+
+void s21_strchr_test() {
+    char *d1[NUM] = {"Test1", "nums 3 3", "2", "  what  ", "\n\n"};
+    char d2[5] = {'t', '3', '2', 'a', '\n'};
+
+    char resf;
+    for (int i = 0; i < NUM; i++) {
+        if ((resf = *s21_strchr(d1[i], d2[i])) == d2[i]) {
+            printf("%s - %c - %c - SUCCESS\n", d1[i], d2[i], d2[i]);
+        } else {
+            printf("%s - %c - %c - FAIL\n", d1[i], d2[i], d2[i]);
         }
     }
 }
