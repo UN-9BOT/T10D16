@@ -96,9 +96,8 @@ void s21_strchr_test() {
     char *d1[NUM] = {"Test1", "nums 3 3", "2", "  what  ", "\n\n"};
     char d2[5] = {'t', '3', '2', 'a', '\n'};
 
-    char resf;
     for (int i = 0; i < NUM; i++) {
-        if ((resf = *s21_strchr(d1[i], d2[i])) == d2[i]) {
+        if ((*s21_strchr(d1[i], d2[i])) == d2[i]) {
             printf("%s - %c - %c - SUCCESS\n", d1[i], d2[i], d2[i]);
         } else {
             printf("%s - %c - %c - FAIL\n", d1[i], d2[i], d2[i]);
