@@ -57,7 +57,7 @@ void s21_strcpy_test() {
     char d3[10];
     int flag = 0;
     for (int i = 0; i < NUM; i++) {
-        s21_strcpy(d1[i], d3);
+        s21_strcpy(d3, d1[i]);
         for (int j = 0; d1[i][j]; j++) {
             if (d1[i][j] != d3[j]) {
                 flag = 1;
